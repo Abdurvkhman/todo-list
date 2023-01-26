@@ -1,0 +1,12 @@
+.saved-block {
+  border: 2px solid #000000;
+  font-family: "Open Sans";
+  padding: 23px 40px 23px 40px;
+  margin-top: 33px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  cursor: pointer;
+}
