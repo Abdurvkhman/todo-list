@@ -1,11 +1,11 @@
 import "./input.css";
 
-const Input = ({ search, setSearch, func }) => {
+const Input = ({ search, setSearch, addTodo }) => {
   return (
     <div className="input-block">
       <input
         onKeyDown={(event) => {
-          if (event.key === "Enter") func();
+          if (event.key === "Enter") addTodo();
         }}
         type="text"
         className="input"
@@ -14,7 +14,7 @@ const Input = ({ search, setSearch, func }) => {
         onChange={(e) => setSearch(e.target.value)}
       />
       <div className="button-block">
-        <button onClick={func} className="btn">
+        <button onClick={addTodo} className="btn">
           Save Todo
         </button>
       </div>

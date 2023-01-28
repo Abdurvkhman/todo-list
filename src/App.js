@@ -1,28 +1,28 @@
 import { useState } from "react";
 import "./App.css";
 import Input from "./input/Input";
-import SavedTodo from "./saved_todo/SavedTodo";
+import SavedTodo from "./saved-todo/SavedTodo";
 
 function App() {
   const [search, setSearch] = useState("");
-  const [arr, setArr] = useState([]);
+  const [todo, setTodo] = useState([]);
 
-  const func = () => {
-    setArr([{ name: search, id: Date.now() }, ...arr]);
+  const addTodo = () => {
+    setTodo([{ name: search, id: Date.now() }, ...todo]);
     setSearch("");
   };
 
   const deleteItem = (id) => {
-    setArr(arr.filter((i) => i.id !== id));
+    setTodo(todo.filter((i) => i.id !== id));
   };
 
   return (
     <div className="app">
-      <Input func={func} search={search} setSearch={setSearch} />
+      <Input addTodo={addTodo} search={search} setSearch={setSearch} />
       <SavedTodo
         deleteItem={deleteItem}
-        arr={arr}
-        setArr={setArr}
+        todo={todo}
+        setTodo={setTodo}
         search={search}
       />
     </div>
